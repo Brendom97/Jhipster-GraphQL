@@ -1,0 +1,32 @@
+type Query {
+    etudiantList : [Etudiant],
+    etudiantById(id :Int) : Etudiant,
+
+
+}
+
+type Mutation {
+    saveEtudiant(etudiant : EtudiantRequest ) : Etudiant,
+    updateEtudiant(id : Int,etudiant : EtudiantRequest ) : Etudiant
+    deleteEtudiant (id : Int) : Int
+    countEtudiant(id:Int):Int
+}
+
+type Etudiant {
+    id : Int,
+    nom : String,
+    prenom : String,
+    email : String,
+    adresse : String,
+    telephone:String
+}
+
+
+input EtudiantRequest {
+    id : Int,
+    nom : String,
+    prenom : String,
+    email : String,
+    adresse : String,
+    telephone:String
+}
